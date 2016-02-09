@@ -13,6 +13,9 @@
 		559411B71C61267E008B4963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559411B61C61267E008B4963 /* Assets.xcassets */; };
 		559411BA1C61267E008B4963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559411B81C61267E008B4963 /* LaunchScreen.storyboard */; };
 		559411C51C61267E008B4963 /* KidTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559411C41C61267E008B4963 /* KidTrackerTests.swift */; };
+		55C624A71C696CCB003F6378 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624A61C696CCB003F6378 /* RatingControl.swift */; };
+		55C624A91C698D62003F6378 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624A81C698D62003F6378 /* Meal.swift */; };
+		55C624AA1C698D62003F6378 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624A81C698D62003F6378 /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 		559411C01C61267E008B4963 /* KidTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KidTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		559411C41C61267E008B4963 /* KidTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidTrackerTests.swift; sourceTree = "<group>"; };
 		559411C61C61267E008B4963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C624A61C696CCB003F6378 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		55C624A81C698D62003F6378 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +84,8 @@
 			children = (
 				559411AF1C61267E008B4963 /* AppDelegate.swift */,
 				559411B11C61267E008B4963 /* ViewController.swift */,
+				55C624A81C698D62003F6378 /* Meal.swift */,
+				55C624A61C696CCB003F6378 /* RatingControl.swift */,
 				559411B31C61267E008B4963 /* Main.storyboard */,
 				559411B61C61267E008B4963 /* Assets.xcassets */,
 				559411B81C61267E008B4963 /* LaunchScreen.storyboard */,
@@ -146,6 +153,7 @@
 				TargetAttributes = {
 					559411AB1C61267E008B4963 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = NLEP6B5M3Z;
 					};
 					559411BF1C61267E008B4963 = {
 						CreatedOnToolsVersion = 7.2;
@@ -197,7 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C624A91C698D62003F6378 /* Meal.swift in Sources */,
 				559411B21C61267E008B4963 /* ViewController.swift in Sources */,
+				55C624A71C696CCB003F6378 /* RatingControl.swift in Sources */,
 				559411B01C61267E008B4963 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C624AA1C698D62003F6378 /* Meal.swift in Sources */,
 				559411C51C61267E008B4963 /* KidTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,10 +338,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KidTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.KidTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -338,10 +352,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KidTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.KidTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -388,6 +405,7 @@
 				559411CB1C61267E008B4963 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		559411CC1C61267E008B4963 /* Build configuration list for PBXNativeTarget "KidTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +414,7 @@
 				559411CE1C61267E008B4963 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
