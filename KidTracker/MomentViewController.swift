@@ -3,7 +3,7 @@
 //  KidTracker
 //
 //  Created by 3delrb on 2/2/16.
-//  Copyright © 2016 KTcompany. All rights reserved.
+//  Copyright © 2016 Ryan Burton. All rights reserved.
 //
 
 import UIKit
@@ -17,10 +17,10 @@ class MomentViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     /*
-    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
-    or constructed as part of adding a new meal.
+    This value is either passed by `MomentTableViewController` in `prepareForSegue(_:sender:)`
+    or constructed as part of adding a new moment.
     */
-    var meal: Meal?
+    var moment: Moment?
     
     
     override func viewDidLoad() {
@@ -28,17 +28,17 @@ class MomentViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         // Handle the text field's user input through delegate callbacks
         nameTextField.delegate = self
-        // Set up views if editing an existing Meal.
-        if let meal = meal {
-            navigationItem.title = meal.name
-            nameTextField.text = meal.name
-            photoImageView.image = meal.photo
-            ratingControl.rating = meal.rating
+        // Set up views if editing an existing Moment.
+        if let moment = moment {
+            navigationItem.title = moment.name
+            nameTextField.text = moment.name
+            photoImageView.image = moment.photo
+            ratingControl.rating = moment.rating
             
         }
         
-        // Enable the Save button only if the text field has a valid Meal name.
-        checkValidMealName()
+        // Enable the Save button only if the text field has a valid Moment name.
+        checkValidMomentName()
        
     }
     // MARK: UITextFieldDelegate
@@ -49,7 +49,7 @@ class MomentViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        checkValidMealName()
+        checkValidMomentName()
         navigationItem.title = textField.text
     }
     
@@ -58,7 +58,7 @@ class MomentViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         saveButton.enabled = false
     }
     
-    func checkValidMealName() {
+    func checkValidMomentName() {
         // Disable the Save button if the text field is empty.
         let text = nameTextField.text ?? ""
         saveButton.enabled = !text.isEmpty
@@ -88,9 +88,9 @@ class MomentViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         // Depending on style of presentation (model or push), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        let isPresentingInAddMomentMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddMealMode {
+        if isPresentingInAddMomentMode {
             dismissViewControllerAnimated(true, completion: nil)
         } else {
             navigationController!.popViewControllerAnimated(true)
@@ -105,8 +105,8 @@ class MomentViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             let photo = photoImageView.image
             let rating = ratingControl.rating
             
-            // Set the meal to be passed to MealTableViewController after the unwind segue.
-            meal = Meal(name: name, photo: photo, rating: rating)
+            // Set the moment to be passed to MomentTableViewController after the unwind segue.
+            moment = Moment(name: name, photo: photo, rating: rating)
             
         }
     }

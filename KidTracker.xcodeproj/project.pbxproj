@@ -14,10 +14,10 @@
 		559411BA1C61267E008B4963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559411B81C61267E008B4963 /* LaunchScreen.storyboard */; };
 		559411C51C61267E008B4963 /* KidTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559411C41C61267E008B4963 /* KidTrackerTests.swift */; };
 		55C624A71C696CCB003F6378 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624A61C696CCB003F6378 /* RatingControl.swift */; };
-		55C624A91C698D62003F6378 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624A81C698D62003F6378 /* Meal.swift */; };
-		55C624AA1C698D62003F6378 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624A81C698D62003F6378 /* Meal.swift */; };
-		55C624AC1C69A79E003F6378 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624AB1C69A79E003F6378 /* MealTableViewCell.swift */; };
-		55C624AE1C6A5C07003F6378 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624AD1C6A5C07003F6378 /* MealTableViewController.swift */; };
+		55C624A91C698D62003F6378 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624A81C698D62003F6378 /* Moment.swift */; };
+		55C624AA1C698D62003F6378 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624A81C698D62003F6378 /* Moment.swift */; };
+		55C624AC1C69A79E003F6378 /* MomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624AB1C69A79E003F6378 /* MomentTableViewCell.swift */; };
+		55C624AE1C6A5C07003F6378 /* MomentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C624AD1C6A5C07003F6378 /* MomentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,9 @@
 		559411C41C61267E008B4963 /* KidTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidTrackerTests.swift; sourceTree = "<group>"; };
 		559411C61C61267E008B4963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C624A61C696CCB003F6378 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
-		55C624A81C698D62003F6378 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		55C624AB1C69A79E003F6378 /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
-		55C624AD1C6A5C07003F6378 /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
+		55C624A81C698D62003F6378 /* Moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
+		55C624AB1C69A79E003F6378 /* MomentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentTableViewCell.swift; sourceTree = "<group>"; };
+		55C624AD1C6A5C07003F6378 /* MomentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +88,11 @@
 			children = (
 				559411AF1C61267E008B4963 /* AppDelegate.swift */,
 				559411B11C61267E008B4963 /* MomentViewController.swift */,
-				55C624A81C698D62003F6378 /* Meal.swift */,
+				55C624A81C698D62003F6378 /* Moment.swift */,
 				55C624A61C696CCB003F6378 /* RatingControl.swift */,
 				559411B31C61267E008B4963 /* Main.storyboard */,
-				55C624AD1C6A5C07003F6378 /* MealTableViewController.swift */,
-				55C624AB1C69A79E003F6378 /* MealTableViewCell.swift */,
+				55C624AD1C6A5C07003F6378 /* MomentTableViewController.swift */,
+				55C624AB1C69A79E003F6378 /* MomentTableViewCell.swift */,
 				559411B61C61267E008B4963 /* Assets.xcassets */,
 				559411B81C61267E008B4963 /* LaunchScreen.storyboard */,
 				559411BB1C61267E008B4963 /* Info.plist */,
@@ -155,7 +155,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = KTcompany;
+				ORGANIZATIONNAME = "Ryan Burton";
 				TargetAttributes = {
 					559411AB1C61267E008B4963 = {
 						CreatedOnToolsVersion = 7.2;
@@ -211,12 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C624A91C698D62003F6378 /* Meal.swift in Sources */,
+				55C624A91C698D62003F6378 /* Moment.swift in Sources */,
 				559411B21C61267E008B4963 /* MomentViewController.swift in Sources */,
 				55C624A71C696CCB003F6378 /* RatingControl.swift in Sources */,
 				559411B01C61267E008B4963 /* AppDelegate.swift in Sources */,
-				55C624AE1C6A5C07003F6378 /* MealTableViewController.swift in Sources */,
-				55C624AC1C69A79E003F6378 /* MealTableViewCell.swift in Sources */,
+				55C624AE1C6A5C07003F6378 /* MomentTableViewController.swift in Sources */,
+				55C624AC1C69A79E003F6378 /* MomentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C624AA1C698D62003F6378 /* Meal.swift in Sources */,
+				55C624AA1C698D62003F6378 /* Moment.swift in Sources */,
 				559411C51C61267E008B4963 /* KidTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,16 +7,16 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Your Meals-->
+        <!--Your Moments-->
         <scene sceneID="2kG-gz-pjm">
             <objects>
-                <tableViewController id="ZSW-yt-N8F" customClass="MealTableViewController" customModule="KidTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ZSW-yt-N8F" customClass="MomentTableViewController" customModule="KidTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="MDI-Tj-ICJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MealTableViewCell" rowHeight="90" id="B4p-2q-K3O" customClass="MealTableViewCell" customModule="KidTracker" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MomentTableViewCell" rowHeight="90" id="B4p-2q-K3O" customClass="MomentTableViewCell" customModule="KidTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B4p-2q-K3O" id="kii-MO-0hR">
@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="ZSW-yt-N8F" id="bEO-wx-Aun"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Meals" id="6Pd-Hi-ZVt">
+                    <navigationItem key="navigationItem" title="Your Moments" id="6Pd-Hi-ZVt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NB7-Hf-IQr">
                             <connections>
                                 <segue destination="6ju-rA-cjZ" kind="presentation" identifier="AddItem" id="sgQ-NK-3sq"/>
@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="345" y="429"/>
         </scene>
-        <!--New Meal-->
+        <!--New Moment-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MomentViewController" customModule="KidTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Uw1-3H-hLi">
                                 <rect key="frame" x="20" y="80" width="560" height="418"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-rt-U1w">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter moment name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-rt-U1w">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -111,7 +111,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Uw1-3H-hLi" secondAttribute="trailing" id="hup-Ts-f8n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Meal" id="dsJ-RM-u6W">
+                    <navigationItem key="navigationItem" title="New Moment" id="dsJ-RM-u6W">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mVh-ec-hB5">
                             <connections>
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="t8z-Po-oVX"/>
@@ -119,7 +119,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="WFB-mB-KJa">
                             <connections>
-                                <segue destination="JTY-1V-2BY" kind="unwind" unwindAction="unwindToMealList:" id="uFr-58-mCc"/>
+                                <segue destination="JTY-1V-2BY" kind="unwind" unwindAction="unwindToMomentList:" id="uFr-58-mCc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -181,6 +181,6 @@
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WvF-GP-SKe"/>
+        <segue reference="nTW-k3-mE8"/>
     </inferredMetricsTieBreakers>
 </document>

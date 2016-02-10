@@ -1,6 +1,6 @@
 import UIKit
 
-class Meal: NSObject, NSCoding {
+class Moment: NSObject, NSCoding {
     
     
     // MARK: Properties
@@ -12,7 +12,7 @@ class Meal: NSObject, NSCoding {
     // MARK: Archiving Paths
     
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("meals")
+    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("moments")
     
     
     // MARK: Types
@@ -52,7 +52,7 @@ class Meal: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
         
-        // Because photo is an optional property of Meal, use conditional cast.
+        // Because photo is an optional property of Moment, use conditional cast.
         let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
         let rating = aDecoder.decodeIntegerForKey(PropertyKey.ratingKey)
         // Must call designated initializer.
