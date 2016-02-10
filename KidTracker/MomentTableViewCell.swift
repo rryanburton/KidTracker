@@ -1,14 +1,14 @@
 //
-//  MealTableViewCell.swift
+//  MomentTableViewCell.swift
 //  KidTracker
 //
 //  Created by 3delrb on 2/8/16.
-//  Copyright © 2016 KTcompany. All rights reserved.
+//  Copyright © 2016 Ryan Burton. All rights reserved.
 //
 
 import UIKit
 
-class MealTableViewCell: UITableViewCell {
+class MomentTableViewCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
