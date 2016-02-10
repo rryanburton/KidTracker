@@ -3,7 +3,7 @@
 //  KidTracker
 //
 //  Created by 3delrb on 2/8/16.
-//  Copyright © 2016 KTcompany. All rights reserved.
+//  Copyright © 2016 Ryan Burton. All rights reserved.
 //
 
 import UIKit

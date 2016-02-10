@@ -1,17 +1,17 @@
 //
-//  MealTableViewController.swift
+//  MomentTableViewController.swift
 //  KidTracker
 //
 //  Created by 3delrb on 2/9/16.
-//  Copyright © 2016 KTcompany. All rights reserved.
+//  Copyright © 2016 Ryan Burton. All rights reserved.
 //
 
 import UIKit
 
-class MealTableViewController: UITableViewController {
+class MomentTableViewController: UITableViewController {
     // MARK: Properties
     
-    var meals = [Meal]()
+    var moments = [Moment]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,28 +19,29 @@ class MealTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem()
         
-        // Load any saved meals, otherwise load sample data.
-        if let savedMeals = loadMeals() {
-            meals += savedMeals
+        // Load any saved moments, otherwise load sample data.
+//        loadSampleMoments()
+        if let savedMoments = loadMoments() {
+            moments += savedMoments
         } else {
             // Load the sample data.
-            loadSampleMeals()
+            loadSampleMoments()
         }
 
     }
     
-    func loadSampleMeals() {
-        let photo1 = UIImage(named: "meal1")!
-        let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4)!
+    func loadSampleMoments() {
+        let photo1 = UIImage(named: "moment1")!
+        let moment1 = Moment(name: "1 Month Old", photo: photo1, rating: 4)!
         
-        let photo2 = UIImage(named: "meal2")!
-        let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5)!
+        let photo2 = UIImage(named: "moment2")!
+        let moment2 = Moment(name: "First Solid Food", photo: photo2, rating: 5)!
         
         
-        let photo3 = UIImage(named: "meal3")!
-        let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3)!
+        let photo3 = UIImage(named: "moment3")!
+        let moment3 = Moment(name: "First Haircut", photo: photo3, rating: 3)!
         
-        meals += [meal1, meal2, meal3]
+        moments += [moment1, moment2, moment3]
     
     }
     
@@ -57,22 +58,22 @@ class MealTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return moments.count
     }
 
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "MealTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MealTableViewCell
+        let cellIdentifier = "MomentTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MomentTableViewCell
         
-        // Fetches the appropriate meal for the data layout source.
-        let meal = meals[indexPath.row]
+        // Fetches the appropriate moment for the data layout source.
+        let moment = moments[indexPath.row]
         
 
-        cell.nameLabel.text = meal.name
-        cell.photoImageView.image = meal.photo
-        cell.ratingControl.rating = meal.rating
+        cell.nameLabel.text = moment.name
+        cell.photoImageView.image = moment.photo
+        cell.ratingControl.rating = moment.rating
         
 
         return cell
@@ -95,8 +96,8 @@ class MealTableViewController: UITableViewController {
         if editingStyle == .Delete {
             
             // Delete the row from the data source
-            meals.removeAtIndex(indexPath.row)
-            saveMeals()
+            moments.removeAtIndex(indexPath.row)
+            saveMoments()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             
@@ -128,52 +129,51 @@ class MealTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "ShowDetail" {
-            let mealDetailViewController = segue.destinationViewController as! MealViewController
+            let momentDetailViewController = segue.destinationViewController as! MomentViewController
             
             // Get the cell that generated this segue.
-            if let selectedMealCell = sender as? MealTableViewCell {
-                let indexPath = tableView.indexPathForCell(selectedMealCell)!
-                let selectedMeal = meals[indexPath.row]
-                mealDetailViewController.meal = selectedMeal
-            }
+            if let selectedMomentCell = sender as? MomentTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedMomentCell)!
+                let selectedMoment = moments[indexPath.row]
+                momentDetailViewController.moment = selectedMoment            }
         }
         else if segue.identifier == "AddItem" {
-            print("Adding new meal.")
+            print("Adding new moment.")
         }
     }
 
 
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? MealViewController, meal = sourceViewController.meal {
+    @IBAction func unwindToMomentList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? MomentViewController, moment = sourceViewController.moment {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing meal.
-                meals[selectedIndexPath.row] = meal
+                // Update an existing moment.
+                moments[selectedIndexPath.row] = moment
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
                 
             }
             else {
-                // Add a new meal.
-                let newIndexPath = NSIndexPath(forRow: meals.count, inSection: 0)
-                meals.append(meal)
+                // Add a new moment.
+                let newIndexPath = NSIndexPath(forRow: moments.count, inSection: 0)
+                moments.append(moment)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
-            // Save the meals
-            saveMeals()
+            // Save the moments
+            saveMoments()
             
         }
     }
 
     // MARK: NSCoding
     
-    func saveMeals() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path!)
+    func saveMoments() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(moments, toFile: Moment.ArchiveURL.path!)
         if !isSuccessfulSave {
-            print("Failed to save meals...")
+            print("Failed to save moments...")
             
         }
     }
-    func loadMeals() -> [Meal]? {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Meal.ArchiveURL.path!) as? [Meal]
+    func loadMoments() -> [Moment]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Moment.ArchiveURL.path!) as? [Moment]
         
     }
     
