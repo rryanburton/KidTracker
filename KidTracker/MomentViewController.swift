@@ -1,5 +1,5 @@
 //
-//  MealViewController.swift
+//  MomentViewController.swift
 //  KidTracker
 //
 //  Created by 3delrb on 2/2/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MomentViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
 

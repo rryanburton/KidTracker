@@ -128,7 +128,7 @@ class MealTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "ShowDetail" {
-            let mealDetailViewController = segue.destinationViewController as! MealViewController
+            let mealDetailViewController = segue.destinationViewController as! MomentViewController
             
             // Get the cell that generated this segue.
             if let selectedMealCell = sender as? MealTableViewCell {
@@ -144,7 +144,7 @@ class MealTableViewController: UITableViewController {
 
 
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? MealViewController, meal = sourceViewController.meal {
+        if let sourceViewController = sender.sourceViewController as? MomentViewController, meal = sourceViewController.meal {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing meal.
                 meals[selectedIndexPath.row] = meal
