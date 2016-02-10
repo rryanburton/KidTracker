@@ -11,10 +11,10 @@ import XCTest
 
 class KidTrackerTests: XCTestCase {
     
-    // Tests to confirm that the Meal initializer returns when no name or a negative rating is provided.
+    // Tests to confirm that the Moment initializer returns when no name or a negative rating is provided.
     func testMealInitialization() {
         // Success case.
-        let potentialItem = Moment(name: "Newest meal", photo: nil, rating: 5)
+        let potentialItem = Moment(name: "Newest moment", photo: nil, rating: 5)
         XCTAssertNotNil(potentialItem)
         
         // Failure cases.
