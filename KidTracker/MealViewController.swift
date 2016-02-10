@@ -48,6 +48,11 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         return true
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        checkValidMealName()
+        navigationItem.title = textField.text
+    }
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         // Disable the Save button while editing.
         saveButton.enabled = false
@@ -59,10 +64,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         saveButton.enabled = !text.isEmpty
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        checkValidMealName()
-        navigationItem.title = textField.text
-    }
+   
     
     // MARK: UIImagePickerControllerDelegate
     
@@ -131,9 +133,5 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     
-//    @IBAction func setDefaultLabelText(sender: UIButton) {
-//        mealNameLabel.text = "Default Text"
-//        
-//    }
 }
 
